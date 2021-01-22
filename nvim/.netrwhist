@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/nop-90/Documents/sources/GPS/fake-gps-client-master'
+let g:netrw_dirhist_2='/home/nop-90/Documents/sources/GPS/gps-sdr-sim/wrapper'
+let g:netrw_dirhist_3='/home/nop-90/Documents/cours/crypto_matérielle/TP-DPA_student'
+let g:netrw_dirhist_4='/home/nop-90/Downloads/openwrt-master/package/boot/uboot-mtk-bpi-r2'
+let g:netrw_dirhist_5='/home/nop-90/Documents/security/sources/Amsterdam/amsterdam.egg-info'
+let g:netrw_dirhist_6='/home/nop-90/Documents/cours/majeure/sod/scanondemand'

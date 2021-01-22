@@ -1,0 +1,37 @@
+{
+    "com.github.james-dumas.ulauncher-run": {
+        "url": "https://github.com/James-Dumas/ulauncher-run",
+        "last_commit_time": "2018-01-29T22:30:49Z",
+        "last_commit": "ea4b83705cbc90eb2546992170f56bdd9aa8dff2",
+        "id": "com.github.james-dumas.ulauncher-run",
+        "updated_at": "2019-04-24T21:13:47.843972"
+    },
+    "com.github.jetbug123.ulauncher-ssh": {
+        "id": "com.github.jetbug123.ulauncher-ssh",
+        "url": "https://github.com/jetbug123/ulauncher-ssh",
+        "updated_at": "2019-12-30T12:06:11.465535",
+        "last_commit": "16248b658d7bba92b56e2d1e365b17ecc3cc9f76",
+        "last_commit_time": "2019-11-16T15:39:19"
+    },
+    "com.github.yannishuber.pass-ulauncher": {
+        "id": "com.github.yannishuber.pass-ulauncher",
+        "url": "https://github.com/yannishuber/pass-ulauncher",
+        "updated_at": "2019-12-30T12:06:13.134965",
+        "last_commit": "25160ce85e731cf40e30ca1fe354b29c1fe6e494",
+        "last_commit_time": "2019-05-28T05:27:22"
+    },
+    "com.github.zensoup.ulauncher-unicode": {
+        "id": "com.github.zensoup.ulauncher-unicode",
+        "url": "https://github.com/zensoup/ulauncher-unicode",
+        "updated_at": "2019-12-30T12:06:15.480221",
+        "last_commit": "0ad36c00a888e687b4bfbf76f266f1000040b337",
+        "last_commit_time": "2019-07-11T06:53:31"
+    },
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2019-12-30T12:06:16.791134",
+        "last_commit": "03c44234d79ecd20aa1d4e86f78842dda8388ea9",
+        "last_commit_time": "2019-12-08T07:41:45"
+    }
+}
