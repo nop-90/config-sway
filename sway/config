@@ -20,7 +20,8 @@ set $term kitty
 # Dmenu style
 # set $menu j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc"' --term="kitty"
 # Ulauncher
-set $menu "WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0 MOZ_ENABLE_WAYLAND=1 SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland GDK_BACKEND=wayland ulauncher"
+set $menu "XDG_CURRENT_DESKTOP=sway MOZ_ENABLE_WAYLAND=1 SDL_VIDEODRIVER=wayland QT_QPA_PLATFORM=wayland GDK_BACKEND=wayland ulauncher"
+set $menuX "MOZ_ENABLE_WAYLAND=0 SDL_VIDEODRIVER=x11 QT_QPA_PLATFORM=x11 GDK_BACKEND=x11 ulauncher"
 #set $menu "ulauncher"
 # Wofi
 #set $menu "MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland wofi"
@@ -30,6 +31,8 @@ set $menu "WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0 MOZ_ENABLE_WAYLAND=1 SD
 
 
 ### Start-up programs
+# Auto screen switch
+exec "kanshi"
 # Notification daemon
 exec "mako --default-timeout=4000"
 # Gnome polkit for root X apps
@@ -40,8 +43,14 @@ exec "nm-applet --indicator"
 exec "udiskie -t -n --appindicator"
 # Redshift (Toulon)
 exec "redshift -l 43.1170:5.9230 -m wayland"
+# audit notifications
+exec "aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log"
 # Start menu
 exec $menu
+
+# Screen sharing 
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway DISPLAY SWAYSOCK
+#exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK
 
 ### Themes
 set $gnome-schema org.gnome.desktop.interface
@@ -60,7 +69,9 @@ set $lock_bg /home/nop-90/Pictures/wallpaper/P1120584.jpg
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output eDP-1 mode 1920x1080 pos 0,0
+#output HDMI-A-2 mode --custom 2560x1440@50Hz pos 1920,-360
+output DP-1 mode 2560x1440 pos 1920,-360
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -144,6 +155,7 @@ default_floating_border none
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $menuX
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -253,9 +265,9 @@ default_floating_border none
     bindsym $mod+F12 exec systemctl suspend
 
 # Wayland enable/disable second monitor
-    bindsym $mod+F2 exec wlr-randr --output HDMI-A-2 --mode 1920x1080 --on --right-of eDP-1 --mode 1920x1080 --on
-    bindsym $mod+F3 exec wlr-randr --output HDMI-A-2 --mode 1920x1080 --on --output eDP-1 --off
-    bindsym $mod+Shift+F2 exec wlr-randr --output HDMI-A-2 --off --output eDP-1 --mode 1920x1080 --on
+    bindsym $mod+F2 exec wlr-randr --output DP-1 --mode 2560x1440 --on --output eDP-1 --mode 1920x1080 --on
+    bindsym $mod+F3 exec wlr-randr --output DP-1 --mode 2560x1440 --on --output eDP-1 --off
+    bindsym $mod+Shift+F2 exec wlr-randr --output DP-1 --off --output eDP-1 --mode 1920x1080 --on
 
 # Change audio output
     bindsym $mod+F4 exec bash /home/nop-90/scripts/change_audio_source.sh
